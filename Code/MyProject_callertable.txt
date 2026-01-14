@@ -1,0 +1,36 @@
+main
+	__CC2DW
+		____DoICP
+	ADC_init
+	PWM_init
+	setServoAngle
+		Mul_16X16_U
+		Div_16x16_S
+			Div_16x16_S_L
+	delay_ms_T0
+		Mul_16X16_U
+	ADC_read
+	moveForward
+	setLeftMotorSpeed
+	setRightMotorSpeed
+	stopMotors
+	turnLeft
+	turnRight
+	readDistanceCM
+		delay_us_T0
+			Div_16x16_S
+				Div_16x16_S_L
+		int2double
+			NRM3232
+				RES032
+				SETFUN32
+				FIXSIGN32
+		Div_32x32_FP
+			SETFDZ32
+			RES032
+			SETFOV32
+			SETFUN32
+		double2int
+			SETIOV3224
+	moveBackward
+interrupt
